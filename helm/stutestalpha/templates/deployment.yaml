@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stutestalpha
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stutestalpha
+  template:
+    metadata:
+      labels:
+        app: stutestalpha
+    spec:
+      containers:
+      - name: stutestalpha
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 8080

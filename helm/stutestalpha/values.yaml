@@ -1,0 +1,17 @@
+# Default values for the Helm chart
+
+image:
+  repository: stutestalpha
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
